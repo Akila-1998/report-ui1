@@ -1,0 +1,23 @@
+.Image{
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+}
+
+.Avatar{
+  width: 400px;
+  height: 210px;
+  z-index: 999;
+  margin-top: -100px;
+  float: right;
+}
+
+.card-body{
+  margin: -50px;
+}
+
+.Template{
+  margin-top: -150px;
+  background: hsla(0, 0%, 100%, 0.8);
+  backdrop-filter: blur(-100px);
+}

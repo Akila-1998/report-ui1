@@ -1,0 +1,59 @@
+<section class="text-center">
+
+  <!-- Background image -->
+  <img class="Image" src="assets/medical-icons.jpg">
+  <!-- Background image -->
+
+  <div class="card mx-4 mx-md-5 shadow Template">
+    <img class="Avatar" src="assets/glucometer.png">
+
+    <div class="card-body py-5 px-md-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+
+          <h2 class="fw-bold mb-5">Health Box SL Report Genarator</h2>
+
+          <form [formGroup]="patientForm"  autocomplete="off" #f="ngForm"  class="g-3">
+
+            <div class="row">
+              <div class="col-md-6 mb-0">
+                <div class="form-group">
+                  <input type="text" id="mgr-pId" name="pId" class="form-control lg-input" placeholder="Patient Id" formControlName="pId">
+                  <span class="error" *ngIf="patientId && patientId.invalid && patientId.touched">Patient Id field is required</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="float-btn mb-4">
+                  <button class="btn btn-primary btn-sm w-25 mx-1 "  type="button" (click)="View()" > View</button>
+                  <button class="btn btn-primary btn-sm w-25 mx-1 "  type="submit" (click)="Download()">&nbsp;Dowload</button>
+                </div>
+              </div>
+              <div class="col-md-6 mb-0">
+                <div class="form-group">
+                  <input type="text" id="mgr-name" name="email" class="form-control lg-input" placeholder="Email" formControlName="email">
+                  <span class="error" *ngIf="email && email.invalid && email.touched">Email field is required</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="float-btn mb-4">
+                <button class="btn btn-primary btn-sm w-25 mx-1 "  type="submit" (click)="Send_Mail()">&nbsp;Send_Mail</button>
+                <button class="btn btn-primary btn-sm w-25" (click)="reset()" >&nbsp;Reset</button>
+              </div>
+            </div>
+
+          </form>
+
+          <div *ngIf="isSubmit" class="row justify-content-center">
+            <div class="col-md-3">
+              <Label>Status:</Label>
+            </div>
+            <div class="col-md-auto">
+              <span *ngIf="isSuccuss" style="color: red; font-weight: bold; font-size: large">succeful</span><span *ngIf="!isSuccuss"style="color: green; font-weight: bold; font-size: large">unsucceful</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
